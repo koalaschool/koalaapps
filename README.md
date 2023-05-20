@@ -1,4 +1,4 @@
-<b>Koala School Assistant Project</b>
+![Koala School Assistant]
 
 -Koala School Assistant-
 
