@@ -32,10 +32,10 @@ Our goal is to revolutionize the way students learn by offering a comprehensive 
 Meet the talented individuals behind the Koala School Assistant project:
 
 Sigit Surya Aji Brata - Project Manager
-
-Responsible for overall project coordination and management.
-Email: sigitsurya23@gmail.com
-GitHub: sigitsurya7
+<br>
+(Responsible for overall project coordination and management.)
+<br>
+Email: sigitsurya23@gmail.com :: GitHub: sigitsurya7
 
 Choirul Iqbal Nurilahi - Back-end Developer
 
