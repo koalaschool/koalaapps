@@ -28,7 +28,13 @@ const App = () => {
 
   const renderProtectedRoute = (element) => {
     if (isLoading) {
-      return <div>Loading...</div>;
+      return <div className="flex items-center justify-center h-screen">
+      <div className="flex space-x-1">
+        <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+        <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+        <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+      </div>
+    </div>;    
     } else {
       if (isLoggedIn) {
         return element;

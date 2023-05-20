@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Dropdown from "components/dropdown";
 import { FiAlignJustify } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -15,6 +16,14 @@ import avatar from "assets/img/avatars/avatar4.png";
 const Navbar = (props) => {
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    // Hapus token dari localStorage
+    localStorage.removeItem("token");
+    // Arahkan pengguna ke halaman sign-in
+    navigate("/auth/sign-in");
+  };
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -55,7 +64,7 @@ const Navbar = (props) => {
           <input
             type="text"
             placeholder="Search..."
-            class="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
+            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
           />
         </div>
         <span
@@ -195,7 +204,10 @@ const Navbar = (props) => {
               </div>
               <div className="mt-3 h-px w-full bg-gray-200 dark:bg-white/20 " />
 
-              <div className="mt-3 ml-4 flex flex-col">
+              <div
+                className="mt-3 ml-4 flex flex-col"
+                onClick={logout}
+              >
                 <a
                   href=" "
                   className="text-sm text-gray-800 dark:text-white hover:dark:text-white"
