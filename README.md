@@ -38,26 +38,27 @@ Sigit Surya Aji Brata - Project Manager
 Email: sigitsurya23@gmail.com :: GitHub: sigitsurya7
 
 Choirul Iqbal Nurilahi - Back-end Developer
-
+<br>
 Handles the server-side development and integration of various APIs
-Email: iqbalilahi7@gmail.com
-GitHub: iqbalilahi
+<br>
+Email: iqbalilahi7@gmail.com :: GitHub: iqbalilahi
 
 Fahmi Fahrezi - Back-end Developer
+<br>
 Handles the server-side development and integration of various APIs.
-
-Email: #
-GitHub: cheyles57
+<br>
+Email: # :: GitHub: cheyles57
 
 Yongky Hidayatullah - Front-end Developer
-
+<br>
 Focuses on creating the user interface and ensuring an intuitive and visually appealing experience.
+<br>
 GitHub: yongky12345
 
-Contributing
-We welcome contributions from the open-source community! If you'd like to contribute to the Koala School Assistant project, please follow our contribution guidelines for a smooth collaboration process.
+## Thank You
+Thank you for your time and for entrusting this Koala School Assistant project at your school
 
-Contact Us
+## Contact Us
 If you have any questions, suggestions, or feedback, feel free to reach out to us. We would love to hear from you!
 
 Email: info@koala-school-assistant.com
