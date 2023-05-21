@@ -2,7 +2,7 @@
 import React from "react";
 
 function InputField(props) {
-  const { label, id, extra, type, placeholder, variant, state, disabled } =
+  const { label, id, extra, type, placeholder, variant, state, disabled, onChange, value, autoComplete } =
     props;
 
   return (
@@ -20,6 +20,7 @@ function InputField(props) {
         type={type}
         id={id}
         placeholder={placeholder}
+        value = {value}
         className={`mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none ${
           disabled === true
             ? "!border-none !bg-gray-100 dark:!bg-white/5 dark:placeholder:!text-[rgba(255,255,255,0.15)]"
@@ -29,6 +30,8 @@ function InputField(props) {
             ? "border-green-500 text-green-500 placeholder:text-green-500 dark:!border-green-400 dark:!text-green-400 dark:placeholder:!text-green-400"
             : "border-gray-200 dark:!border-white/10 dark:text-white"
         }`}
+        onChange={onChange}
+        autoComplete={autoComplete}
       />
     </div>
   );

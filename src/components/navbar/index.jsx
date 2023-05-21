@@ -17,12 +17,11 @@ const Navbar = (props) => {
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
   const navigate = useNavigate();
+  const name = localStorage.getItem("name");
 
   const logout = () => {
-    // Hapus token dari localStorage
     localStorage.removeItem("token");
-    // Arahkan pengguna ke halaman sign-in
-    navigate("/auth/sign-in");
+    navigate("/auth/sign-in", { replace: true });
   };
 
   return (
@@ -198,7 +197,7 @@ const Navbar = (props) => {
               <div className="mt-3 ml-4">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    👋 Hey, Adela
+                    👋 Hey, {name}
                   </p>{" "}
                 </div>
               </div>
@@ -206,7 +205,6 @@ const Navbar = (props) => {
 
               <div
                 className="mt-3 ml-4 flex flex-col"
-                onClick={logout}
               >
                 <a
                   href=" "
@@ -223,6 +221,7 @@ const Navbar = (props) => {
                 <a
                   href=" "
                   className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
+                  onClick={logout}
                 >
                   Log Out
                 </a>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import InputField from 'components/fields/InputField';
+import Swal from 'sweetalert2';
 import Checkbox from 'components/checkbox';
 
 const SignIn = () => {
@@ -26,11 +28,26 @@ const SignIn = () => {
 
     try {
       const response = await axios.post('http://203.194.112.59:28001/v1/login', loginData);
-      localStorage.setItem('token', response.data.access_token);
-      console.log(response.data.status);
-      navigate('/admin');
+      localStorage.setItem("token", response.data.access_token);
+      localStorage.setItem("name", response.data.fullname);
+      Swal.fire({
+        title: 'Login Success!',
+        text: 'You will be redirected to admin',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 2000
+      });
+      setTimeout(() => {
+        navigate('/admin');
+      }, 2500);
     } catch (error) {
-      console.error(error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Username Or Password Is Wrong',
+        timer: 2000,
+        icon: 'error',
+        showConfirmButton: false
+      });
     }
   };
 
@@ -43,13 +60,10 @@ const SignIn = () => {
           Sign In
         </h4>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username" className="text-sm text-navy-700 dark:text-white">
-            Username*
-          </label>
           <div>
-            <input
-              className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none"
+            <InputField
               placeholder="Username"
+              label="Username"
               id="username"
               type="text"
               value={username}
@@ -57,21 +71,19 @@ const SignIn = () => {
               autoComplete="current-username"
             />
           </div>
+          
           <div className="mb-4 mt-2">
-            <label htmlFor="password" className="text-sm text-navy-700 dark:text-white">
-              Password*
-            </label>
-            <input
-              className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none"
+            <InputField
               placeholder="Password"
+              label="Password"
               id="password"
               type="password"
               value={password}
               onChange={handlePasswordChange}
-              autoComplete="current-password" // Add the autocomplete attribute
+              autoComplete="current-password"
             />
-
           </div>
+          
           <div className="mb-4 flex items-center justify-between px-2">
             <div className="flex items-center">
               <Checkbox />
@@ -86,6 +98,7 @@ const SignIn = () => {
               Forgot Password?
             </a>
           </div>
+          
           <button
             type="submit"
             className="linear mt-2 w-full rounded-xl bg-brand-500 py-[12px] text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
