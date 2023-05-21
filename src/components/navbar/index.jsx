@@ -20,8 +20,8 @@ const Navbar = (props) => {
   const name = localStorage.getItem("name");
 
   const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/auth/sign-in", { replace: true });
+    localStorage.clear();
+    navigate("/auth/sign-in");
   };
 
   return (

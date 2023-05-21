@@ -38,7 +38,8 @@ const SignIn = () => {
         timer: 2000
       });
       setTimeout(() => {
-        navigate('/admin');
+        navigate("/admin/default", {replace: true});
+        window.location.reload();
       }, 2500);
     } catch (error) {
       Swal.fire({
